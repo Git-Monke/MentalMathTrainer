@@ -7,7 +7,6 @@ function App() {
 
   const [input, setInput] = React.useState(0);
   const [correct, setCorrect] = React.useState(0);
-  const [incorrect, setIncorrect] = React.useState(0);
 
   const [data, setData] = React.useState([]);
   const [dt, setDt] = React.useState(0);
@@ -103,7 +102,6 @@ function App() {
       </div>
       <div className="score">
         <h1>Correct: {correct}</h1>
-        <h1>Incorrect: {incorrect}</h1>
         <h1>
           Average Speed:{" "}
           {data.length > 10 ? calcAverageSpeed() + "ms" : "not enough data"}
