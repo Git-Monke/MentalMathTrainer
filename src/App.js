@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useEquation from "./useEquation";
 import useKeypress from "react-use-keypress";
 
@@ -11,8 +11,6 @@ function App() {
 
   const [data, setData] = React.useState([]);
   const [dt, setDt] = React.useState(0);
-
-  const [hasStarted, setHasStarted] = React.useState(false);
 
   const digits = Array(10)
     .fill(0)
@@ -75,26 +73,6 @@ function App() {
     setDt(performance.now());
     setInput(0);
   }
-
-  function submitAnswer() {
-    const correct = input === equation.former + equation.latter;
-
-    if (correct) {
-      correctSubmition();
-    } else {
-      setIncorrect(increment);
-    }
-  }
-
-  useKeypress("Enter", () => {
-    if (!hasStarted) {
-      setHasStarted(true);
-      return;
-    }
-
-    submitAnswer();
-    setInput(0);
-  });
 
   useKeypress("Backspace", () => {
     setInput((i) => Math.floor(i / 10));

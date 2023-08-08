@@ -1,7 +1,7 @@
 import React from "react";
 
 function rand() {
-  return Math.floor(Math.random() * 10);
+  return Math.floor(Math.random() * 100);
 }
 
 function useEquation() {
